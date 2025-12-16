@@ -1,0 +1,34 @@
+android_app {
+    name: "EdgeLink",
+    
+    srcs: ["app/src/main/java/**/*.kt"],
+    resource_dirs: ["app/src/main/res"],
+    manifest: "app/src/main/AndroidManifest.xml",
+    
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+    
+    // Install the permissions whitelist automatically
+    required: ["privapp_permissions_edgelink"],
+    
+    static_libs: [
+        "androidx.core_core-ktx",
+        "androidx.appcompat_appcompat",
+        "com.google.android.material_material",
+        "androidx.recyclerview_recyclerview",
+        "androidx-constraintlayout_constraintlayout",
+    ],
+
+    optimize: {
+        enabled: false,
+    },
+}
+
+// Define the permissions file as a module
+prebuilt_etc {
+    name: "privapp_permissions_edgelink",
+    sub_dir: "permissions",
+    src: "privapp_permissions_edgelink.xml",
+    filename_from_src: true,
+}
