@@ -67,7 +67,7 @@ A dedicated Settings panel is included to customize:
 
 ## Requirements
 
-* Android 13+ (Tested on LineageOS 20/21).
+* Android 13+ (Tested on LineageOS 23).
 * `platform` signature keys (or whitelisted priv-app permissions).
 
 ## License
